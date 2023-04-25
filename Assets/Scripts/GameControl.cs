@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameControl : MonoBehaviour
 {
     public bool isGameActive = false;
+    public GameObject canvas;
     private void Update() 
     {
         if(isGameActive)
@@ -17,6 +18,7 @@ public class GameControl : MonoBehaviour
         if(other.gameObject.CompareTag("Sword"))
         {
             isGameActive = true;
+            canvas.SetActive(true);
         }
     }
 }

@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     [SerializeField] private TMP_Text textCounter;
-    public float timeRemaining ;
+    public float timeRemaining = 120;
+    public FadeScreen fadeScreen;
+    public bool fade;
     public bool timer, countdown;
     float timeCount;
     bool minuteLeft;
@@ -37,7 +39,7 @@ public class Timer : MonoBehaviour
     }
     void LoadOtherScene(float timeToDisplay)
     {
-        if (timeToDisplay == 0)
+        if (timeToDisplay == 0 || sc.score==10)
         {
             StartCoroutine(GoToSceneRoutine());
             audioManager.Stop("Clock");
@@ -46,8 +48,9 @@ public class Timer : MonoBehaviour
     
     IEnumerator GoToSceneRoutine()
     {
-        //ending condition : reset all
-        yield return new WaitForSeconds(3f);
+        fadeScreen.FadeOut();
+        yield return new WaitForSeconds(fadeScreen.fadeDuration);
+        SceneManager.LoadScene(0);
     }
     public void SwitchTimer(bool countdown, bool timer)
     {

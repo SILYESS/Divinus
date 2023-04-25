@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TargetControl : MonoBehaviour
 {
-    public GameObject playerPos;
+    GameObject playerPos;
     [SerializeField] float targetSpeed;
     private void Start() 
     {
@@ -24,6 +24,7 @@ public class TargetControl : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other) 
     {
-        Destroy(gameObject); 
+        Destroy(gameObject);
+        FindObjectOfType<ScoreSystem>().Scoring(1);
     }    
 }
