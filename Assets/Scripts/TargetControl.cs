@@ -24,7 +24,7 @@ public class TargetControl : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other) 
     {
-        Destroy(gameObject);
+        Destroy(gameObject,3f) ;
         FindObjectOfType<ScoreSystem>().Scoring(1);
     }    
 }

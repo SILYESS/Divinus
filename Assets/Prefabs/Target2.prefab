@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1274857016380593749}
   - component: {fileID: 1274857016380593750}
   - component: {fileID: -3978685259789033168}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Target2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,5 +110,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1493c5e563b986b4caca44537c1b5886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPos: {fileID: 0}
   targetSpeed: 3

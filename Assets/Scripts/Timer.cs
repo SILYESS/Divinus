@@ -39,7 +39,7 @@ public class Timer : MonoBehaviour
     }
     void LoadOtherScene(float timeToDisplay)
     {
-        if (timeToDisplay == 0 || sc.score==10)
+        if (timeToDisplay == 0)
         {
             StartCoroutine(GoToSceneRoutine());
             audioManager.Stop("Clock");
