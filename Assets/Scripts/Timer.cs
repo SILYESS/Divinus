@@ -7,7 +7,6 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] private TMP_Text textCounter;
     public float timeRemaining ;
-    public bool fade;
     public bool timer, countdown;
     float timeCount;
     bool minuteLeft;
@@ -38,7 +37,7 @@ public class Timer : MonoBehaviour
     }
     void LoadOtherScene(float timeToDisplay)
     {
-        if (timeToDisplay == 0 || sc.score==10)
+        if (timeToDisplay == 0)
         {
             StartCoroutine(GoToSceneRoutine());
             audioManager.Stop("Clock");

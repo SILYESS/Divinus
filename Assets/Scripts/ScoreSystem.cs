@@ -8,8 +8,8 @@ public class ScoreSystem : MonoBehaviour
 {
    [SerializeField] 
    private TMP_Text scoreText;
-   public float score;
-   public TMP_Text finalscoreText;
+   float score;
+   //public TMP_Text finalscoreText;
     public GameObject scoreCanvas;
     private void Start()
     {
@@ -26,13 +26,15 @@ public class ScoreSystem : MonoBehaviour
 
     public void DisplayScore()
     {
-        Scene current = SceneManager.GetActiveScene();
-        if (current.name == "MainMenu" && PlayerPrefs.GetFloat("score") !=0)
-        {
-            //finalscoreText = Find("CanvasMain/Score/scoreResult").GetComponent<TextMeshPro>();
-            scoreCanvas.SetActive(true);
-            finalscoreText.text = "" + PlayerPrefs.GetFloat("score");
-        }
+        scoreCanvas.SetActive(true);
+
+        //Scene current = SceneManager.GetActiveScene();
+        //if (current.name == "MainMenu" && PlayerPrefs.GetFloat("score") !=0)
+        //{
+        //    //finalscoreText = Find("CanvasMain/Score/scoreResult").GetComponent<TextMeshPro>();
+        //    scoreCanvas.SetActive(true);
+        //    finalscoreText.text = "" + PlayerPrefs.GetFloat("score");
+        //}
         
     }
     public void ResetScore()
