@@ -24,7 +24,8 @@ public class TargetControl : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other) 
     {
-        Destroy(gameObject,3f) ;
+        Destroy(gameObject) ;
+        //change it to sword trigger 
         FindObjectOfType<ScoreSystem>().Scoring(1);
     }    
 }
