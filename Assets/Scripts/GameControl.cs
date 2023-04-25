@@ -9,7 +9,7 @@ public class GameControl : MonoBehaviour
     {
         if(isGameActive)
         {
-            transform.Translate(-transform.up * Time.deltaTime * 10);
+            transform.Translate(-transform.up * Time.deltaTime * 0.5f);
         }    
     }
     private void OnCollisionExit(Collision other) 

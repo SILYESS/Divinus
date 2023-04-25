@@ -17,6 +17,7 @@ public class TargetControl : MonoBehaviour
     {
         MoveTarget();    
     }
+    
     void MoveTarget()
     {
         Vector3 targetDirection = playerPos.transform.position - transform.position;
