@@ -17,7 +17,7 @@ public class SliceObject : MonoBehaviour
         bool hasHit = Physics.Linecast(startSlicePoint.position, endSlicePoint.position, out RaycastHit hit, sliceableLayer);
         if (hasHit)
         {
-            AudioManager.instance.Play("Cut");
+            //AudioManager.instance.Play("Cut");
             GameObject target = hit.transform.gameObject;
             Slice(target);
         }
