@@ -36,7 +36,6 @@ public class TargetControl : MonoBehaviour
         else if (other.tag == "Sword")
         {
             FindObjectOfType<ScoreSystem>().Scoring(1);
-            //Destroy(gameObject);
         }
     }
 }

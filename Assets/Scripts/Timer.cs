@@ -7,7 +7,6 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] private TMP_Text textCounter;
     public float timeRemaining;
-    public bool fade;
     public bool timer, countdown;
     float timeCount;
     bool minuteLeft;
@@ -22,7 +21,7 @@ public class Timer : MonoBehaviour
     void Update()
     {
         SwitchTimer(countdown, timer);
-        }
+    }
         
        void DisplayTime(float timeToDisplay)
     {
@@ -47,7 +46,9 @@ public class Timer : MonoBehaviour
     IEnumerator GoToSceneRoutine()
     {
         //what happens when the time ends
+        FindObjectOfType<SpawnManager>().enabled = false;
         yield return new WaitForSeconds(1f);
+
     }
     public void SwitchTimer(bool countdown, bool timer)
     {
