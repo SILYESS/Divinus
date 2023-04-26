@@ -6,7 +6,7 @@ public class SpawnManager : MonoBehaviour
 {
    public List<GameObject> target;
    public List<Transform> spawnPos;
-   public GameControl gameControl;
+   GameControl gameControl;
    [SerializeField] float spawnRate;
    [SerializeField] int startGame = 0;
    private void Start() 

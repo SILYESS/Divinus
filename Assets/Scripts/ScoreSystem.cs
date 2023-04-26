@@ -17,11 +17,17 @@ public class ScoreSystem : MonoBehaviour
     }
     public void Scoring(float scoreRate)
     {
-        score += scoreRate;
-        scoreText.text = "" + score;
-        PlayerPrefs.SetFloat("score",score + PlayerPrefs.GetFloat("score"));
+            score += scoreRate;
+            scoreText.text = "" + score;
     }
-
+    public void Damage(float scoreRate)
+    {
+        if (score >= 0)
+        {
+            score -= scoreRate;
+            scoreText.text = "" + score;
+        }
+    }
     //public void DisplayScore()
     //{
     //    Scene current = SceneManager.GetActiveScene();
@@ -31,7 +37,7 @@ public class ScoreSystem : MonoBehaviour
     //        scoreCanvas.SetActive(true);
     //        finalscoreText.text = "" + PlayerPrefs.GetFloat("score");
     //    }
-        
+
     //}
     public void ResetScore()
     {

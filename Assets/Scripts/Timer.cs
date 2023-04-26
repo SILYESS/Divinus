@@ -6,19 +6,17 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     [SerializeField] private TMP_Text textCounter;
-    public float timeRemaining = 120;
-    public FadeScreen fadeScreen;
+    public float timeRemaining;
     public bool fade;
     public bool timer, countdown;
     float timeCount;
     bool minuteLeft;
 
     private AudioManager audioManager;
-    private ScoreSystem sc;
 
-    private void Start() {
 
-        sc = FindObjectOfType<ScoreSystem>();
+    private void Start() 
+    {
         audioManager = FindObjectOfType<AudioManager>();
     }
     void Update()
@@ -48,9 +46,8 @@ public class Timer : MonoBehaviour
     
     IEnumerator GoToSceneRoutine()
     {
-        fadeScreen.FadeOut();
-        yield return new WaitForSeconds(fadeScreen.fadeDuration);
-        SceneManager.LoadScene(0);
+        //what happens when the time ends
+        yield return new WaitForSeconds(1f);
     }
     public void SwitchTimer(bool countdown, bool timer)
     {
